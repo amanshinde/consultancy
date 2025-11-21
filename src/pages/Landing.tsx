@@ -22,11 +22,18 @@ function LandingPage() {
                 { label: 'About', href: '#about' },
                 { label: 'Why choose us', href: '#why' },
                 { label: 'How it works', href: '#how' },
-              ].map((link) => (
-                <a key={link.label} href={link.href} className="transition hover:text-slate-900">
-                  {link.label}
-                </a>
-              ))}
+                { label: 'Contact', href: '/contact', isLink: true },
+              ].map((link) =>
+                link.isLink ? (
+                  <Link key={link.label} to={link.href} className="transition hover:text-slate-900">
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a key={link.label} href={link.href} className="transition hover:text-slate-900">
+                    {link.label}
+                  </a>
+                )
+              )}
             </nav>
             <div className="flex items-center gap-3 text-sm">
               <Link
@@ -169,6 +176,127 @@ function LandingPage() {
             </div>
           </section>
         </main>
+
+        <footer className="w-full border-t border-slate-200 bg-white">
+          <div className="w-full px-6 py-12">
+            <div className="grid gap-8 md:grid-cols-4">
+              <div>
+                <div className="flex items-center gap-3">
+                  <div className="rounded-xl bg-brand text-white px-4 py-2 text-sm font-semibold">
+                    CW
+                  </div>
+                  <div>
+                    <p className="text-[11px] uppercase tracking-[0.5em] text-slate-400">Consultation</p>
+                    <p className="text-sm font-semibold text-slate-700">Web Application</p>
+                  </div>
+                </div>
+                <p className="mt-4 text-sm text-slate-600">
+                  Connecting clients and consultants with seamless booking and collaboration tools.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-semibold text-slate-900">Platform</h3>
+                <ul className="mt-4 space-y-3 text-sm text-slate-600">
+                  <li>
+                    <a href="#about" className="transition hover:text-slate-900">
+                      About us
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#why" className="transition hover:text-slate-900">
+                      Why choose us
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#how" className="transition hover:text-slate-900">
+                      How it works
+                    </a>
+                  </li>
+                  <li>
+                    <Link to="/signup" className="transition hover:text-slate-900">
+                      Become a Consultant
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-semibold text-slate-900">Account</h3>
+                <ul className="mt-4 space-y-3 text-sm text-slate-600">
+                  <li>
+                    <Link to="/login" className="transition hover:text-slate-900">
+                      Login
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/signup" className="transition hover:text-slate-900">
+                      Signup
+                    </Link>
+                  </li>
+                  <li>
+                    <a href="#" className="transition hover:text-slate-900">
+                      Forgot password
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="transition hover:text-slate-900">
+                      Help & Support
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-semibold text-slate-900">Contact</h3>
+                <ul className="mt-4 space-y-3 text-sm text-slate-600">
+                  <li>
+                    <Link to="/contact" className="transition hover:text-slate-900">
+                      Contact us
+                    </Link>
+                  </li>
+                  <li>
+                    <a href="mailto:support@example.com" className="transition hover:text-slate-900">
+                      support@example.com
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mailto:sales@example.com" className="transition hover:text-slate-900">
+                      sales@example.com
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="transition hover:text-slate-900">
+                      Privacy Policy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="transition hover:text-slate-900">
+                      Terms of Service
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-8 border-t border-slate-200 pt-8">
+              <div className="flex flex-col items-center justify-between gap-4 text-sm text-slate-600 md:flex-row">
+                <p>© {new Date().getFullYear()} Consultation Web Application. All rights reserved.</p>
+                <div className="flex gap-6">
+                  <a href="#" className="transition hover:text-slate-900">
+                    Twitter
+                  </a>
+                  <a href="#" className="transition hover:text-slate-900">
+                    LinkedIn
+                  </a>
+                  <a href="#" className="transition hover:text-slate-900">
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   )
