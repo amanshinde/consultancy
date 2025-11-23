@@ -1,8 +1,9 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
 function LoginPage() {
   const [loginMethod, setLoginMethod] = useState<'password' | 'otp'>('password')
+  const navigate = useNavigate()
 
   return (
     <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900">
@@ -121,6 +122,7 @@ function LoginPage() {
                   )}
                   <button
                     type="button"
+                    onClick={() => navigate('/dashboard')}
                     className="flex-1 rounded-full bg-slate-900 px-4 py-3 text-sm font-semibold text-white hover:bg-slate-800"
                   >
                     {loginMethod === 'password' ? 'Login' : 'Verify & Login'}
