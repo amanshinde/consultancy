@@ -5,15 +5,35 @@ function ContactPage() {
   return (
     <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900">
       <header className="border-b border-slate-200 bg-white/80 backdrop-blur-xl">
-        <div className="flex w-full items-center gap-3 px-6 py-4">
-          <Link to="/" className="rounded-xl bg-brand px-4 py-2 text-sm font-semibold text-white">
-            CW
+        <div className="flex w-full flex-wrap items-center gap-4 px-6 py-4">
+          <Link to="/" className="flex items-center gap-3 cursor-pointer">
+            <div className="rounded-xl bg-brand text-white px-4 py-2 text-sm font-semibold">
+              CW
+            </div>
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.5em] text-slate-400">Consultation</p>
+              <p className="text-base font-semibold text-slate-700">Web Application</p>
+            </div>
           </Link>
-          <div>
-            <p className="text-[11px] uppercase tracking-[0.5em] text-slate-400">Consultation</p>
-            <p className="text-base font-semibold text-slate-700">Web Application</p>
-          </div>
-          <div className="ml-auto flex items-center gap-3 text-sm">
+          <nav className="ml-auto hidden items-center gap-6 text-sm font-semibold text-slate-500 md:flex">
+            {[
+              { label: 'About', href: '/#about', isLink: false },
+              { label: 'Why choose us', href: '/#why', isLink: false },
+              { label: 'How it works', href: '/#how', isLink: false },
+              { label: 'Contact', href: '/contact', isLink: true },
+            ].map((link) =>
+              link.isLink ? (
+                <Link key={link.label} to={link.href} className="transition hover:text-slate-900">
+                  {link.label}
+                </Link>
+              ) : (
+                <a key={link.label} href={link.href} className="transition hover:text-slate-900">
+                  {link.label}
+                </a>
+              )
+            )}
+          </nav>
+          <div className="flex items-center gap-3 text-sm">
             <Link
               to="/login"
               className="rounded-full border border-slate-200 px-4 py-2 font-semibold text-slate-600 transition hover:text-slate-900"

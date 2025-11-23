@@ -8,7 +8,7 @@ function LandingPage() {
       <div className="relative">
         <header className="border-b border-slate-200 bg-white/80 backdrop-blur-xl">
           <div className="flex w-full flex-wrap items-center gap-4 px-6 py-4">
-            <div className="flex items-center gap-3">
+            <Link to="/" className="flex items-center gap-3 cursor-pointer">
               <div className="rounded-xl bg-brand text-white px-4 py-2 text-sm font-semibold">
                 CW
               </div>
@@ -16,7 +16,7 @@ function LandingPage() {
                 <p className="text-[11px] uppercase tracking-[0.5em] text-slate-400">Consultation</p>
                 <p className="text-base font-semibold text-slate-700">Web Application</p>
               </div>
-            </div>
+            </Link>
             <nav className="ml-auto hidden items-center gap-6 text-sm font-semibold text-slate-500 md:flex">
               {[
                 { label: 'About', href: '#about' },
@@ -57,23 +57,35 @@ function LandingPage() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(79,70,229,0.25),_transparent_55%)]" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,_rgba(20,184,166,0.2),_transparent_50%)]" />
             <div className="relative">
-              <div className="space-y-6 text-center lg:text-left">
-                <p className="text-xs uppercase tracking-[0.4em] text-brand">Consultation Web Application</p>
-                <h1 className="text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl">
-                  Connect clients and consultants with a single, confident hero experience.
-                </h1>
-                <p className="text-lg text-slate-600">
-                  Clarify the value in seconds, share how consultants support growth, and guide visitors to the
-                  two primary actions they expect.
-                </p>
-                <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
-                  <button className="flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-base font-semibold text-white shadow-glow-sm transition hover:bg-indigo-500">
-                    Find Consultants
-                    <ArrowLongRightIcon className="h-5 w-5" />
-                  </button>
-                  <button className="rounded-full border border-slate-200 px-6 py-3 text-base font-semibold text-slate-700 transition hover:border-slate-300">
-                    Become a Consultant
-                  </button>
+              <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+                <div className="space-y-6 text-center lg:text-left">
+                  <p className="text-xs uppercase tracking-[0.4em] text-brand">Consultation Web Application</p>
+                  <h1 className="text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl">
+                    Connect clients and consultants with a single, confident hero experience.
+                  </h1>
+                  <p className="text-lg text-slate-600">
+                    Clarify the value in seconds, share how consultants support growth, and guide visitors to the
+                    two primary actions they expect.
+                  </p>
+                  <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
+                    <button className="flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-base font-semibold text-white shadow-glow-sm transition hover:bg-indigo-500">
+                      Find Consultants
+                      <ArrowLongRightIcon className="h-5 w-5" />
+                    </button>
+                    <button className="rounded-full border border-slate-200 px-6 py-3 text-base font-semibold text-slate-700 transition hover:border-slate-300">
+                      Become a Consultant
+                    </button>
+                  </div>
+                </div>
+                <div className="relative hidden lg:block">
+                  <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                    <img
+                      src="/hero-image.png"
+                      alt="Business professionals collaborating"
+                      className="h-full w-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent" />
+                  </div>
                 </div>
               </div>
             </div>

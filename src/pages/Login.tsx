@@ -8,13 +8,15 @@ function LoginPage() {
     <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900">
       <header className="border-b border-slate-200 bg-white/80 backdrop-blur-xl">
         <div className="flex w-full items-center gap-3 px-6 py-4">
-          <Link to="/" className="rounded-xl bg-brand px-4 py-2 text-sm font-semibold text-white">
-            CW
+          <Link to="/" className="flex items-center gap-3 cursor-pointer">
+            <div className="rounded-xl bg-brand text-white px-4 py-2 text-sm font-semibold">
+              CW
+            </div>
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.5em] text-slate-400">Consultation</p>
+              <p className="text-base font-semibold text-slate-700">Web Application</p>
+            </div>
           </Link>
-          <div>
-            <p className="text-[11px] uppercase tracking-[0.5em] text-slate-400">Consultation</p>
-            <p className="text-base font-semibold text-slate-700">Web Application</p>
-          </div>
           <div className="ml-auto text-sm text-slate-500">
             New here?{' '}
             <Link to="/signup" className="font-semibold text-brand hover:text-indigo-500">
@@ -143,9 +145,9 @@ function LoginPage() {
               </ul>
               <div className="mt-8 rounded-2xl border border-white/20 bg-white/5 p-4 text-sm text-slate-100">
                 Need help?{' '}
-                <a href="mailto:support@example.com" className="font-semibold text-white underline">
+                <Link to="/contact" className="font-semibold text-white underline">
                   Contact support
-                </a>
+                </Link>
               </div>
             </div>
           </div>

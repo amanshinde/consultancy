@@ -18,13 +18,15 @@ function SignupPage() {
     <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900">
       <header className="border-b border-slate-200 bg-white/80 backdrop-blur-xl">
         <div className="flex w-full items-center gap-3 px-6 py-4">
-          <Link to="/" className="rounded-xl bg-brand px-4 py-2 text-sm font-semibold text-white">
-            CW
+          <Link to="/" className="flex items-center gap-3 cursor-pointer">
+            <div className="rounded-xl bg-brand text-white px-4 py-2 text-sm font-semibold">
+              CW
+            </div>
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.5em] text-slate-400">Consultation</p>
+              <p className="text-base font-semibold text-slate-700">Web Application</p>
+            </div>
           </Link>
-          <div>
-            <p className="text-[11px] uppercase tracking-[0.5em] text-slate-400">Consultation</p>
-            <p className="text-base font-semibold text-slate-700">Web Application</p>
-          </div>
           <div className="ml-auto text-sm text-slate-500">
             Already have an account?{' '}
             <Link to="/login" className="font-semibold text-brand hover:text-indigo-500">
@@ -167,9 +169,9 @@ function SignupPage() {
               </ul>
               <div className="mt-8 rounded-2xl border border-white/20 bg-white/10 p-4 text-sm text-white">
                 Need a custom onboarding?{' '}
-                <a href="mailto:sales@example.com" className="font-semibold underline">
+                <Link to="/contact" className="font-semibold underline">
                   Talk to sales
-                </a>
+                </Link>
               </div>
             </div>
           </div>
