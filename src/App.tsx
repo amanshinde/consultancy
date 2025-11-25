@@ -5,6 +5,8 @@ import SignupPage from './pages/Signup'
 import ContactPage from './pages/Contact'
 import UserDashboard from './pages/UserDashboard'
 import AdminPage from './pages/Admin'
+import ConsultantDashboard from './pages/ConsultantDashboard'
+import EnterpriseDashboard from './pages/EnterpriseDashboard'
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/dashboard" element={<UserDashboard />} />
+        <Route path="/consultant-dashboard" element={<ConsultantDashboard />} />
+        <Route path="/enterprise-dashboard" element={<EnterpriseDashboard />} />
         <Route path="/admin" element={<AdminPage />} />
       </Routes>
     </BrowserRouter>
@@ -22,5 +26,3 @@ function App() {
 }
 
 export default App
-
-

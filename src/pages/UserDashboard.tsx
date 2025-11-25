@@ -15,7 +15,7 @@ import {
 type Tab = 'overview' | 'search' | 'upcoming' | 'past' | 'credits' | 'support'
 
 function UserDashboard() {
-  const [activeTab, setActiveTab] = useState<Tab>('overview')
+  const [activeTab, setActiveTab] = useState<Tab>('search')
 
   const upcomingSessions = [
     {
@@ -95,8 +95,8 @@ function UserDashboard() {
   ]
 
   const sidebarItems = [
-    { id: 'overview' as Tab, label: 'Overview', icon: HomeIcon },
     { id: 'search' as Tab, label: 'Find Consultants', icon: MagnifyingGlassIcon },
+    { id: 'overview' as Tab, label: 'Overview', icon: HomeIcon },
     { id: 'upcoming' as Tab, label: 'Upcoming Sessions', icon: CalendarDaysIcon },
     { id: 'past' as Tab, label: 'Past Sessions', icon: CheckCircleIcon },
     { id: 'credits' as Tab, label: 'Credits & Plans', icon: CreditCardIcon },

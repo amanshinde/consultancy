@@ -1,0 +1,9 @@
+from pathlib import Path
+path = Path('src/pages/ConsultantDashboard.tsx')
+text = path.read_text()
+old = """                      <div className=\"mt-4 flex flex-wrap gap-3\">\n                        <button className=\"rounded-lg border border-sky-200 bg-white px-4 py-2 text-sm font-semibold text-sky-700 transition hover:border-sky-300 hover:bg-sky-50\">\n                          View calendar\n                        </button>\n                        <button className=\"rounded-lg bg-gradient-to-r from-sky-500 to-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-md shadow-sky-500/30 transition hover:shadow-lg hover:shadow-sky-500/40\">\n                          Share availability\n                        </button>\n                      </div>"""
+new = """                      <div className=\"mt-4 flex flex-wrap gap-3\">\n                        <button\n                          type=\"button\"\n                          onClick={() => goToTab('sessions')}\n                          className=\"rounded-lg border border-sky-200 bg-white px-4 py-2 text-sm font-semibold text-sky-700 transition hover:border-sky-300 hover:bg-sky-50\"\n                        >\n                          View calendar\n                        </button>\n                        <button\n                          type=\"button\"\n                          onClick={() => goToTab('requests')}\n                          className=\"rounded-lg bg-gradient-to-r from-sky-500 to-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-md shadow-sky-500/30 transition hover:shadow-lg hover:shadow-sky-500/40\"\n                        >\n                          Share availability\n                        </button>\n                      </div>"""
+if old not in text:
+    raise SystemExit('old block not found')
+text = text.replace(old, new, 1)
+path.write_text(text)
