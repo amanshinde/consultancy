@@ -332,7 +332,7 @@ function UserDashboard() {
                   },
                 ].map((consultant) => (
                   <div
-                    key={consultant.name}
+                    key={consultant.name /* TODO: id-based key when wired to backend */}
                     className="rounded-xl border border-sky-100/60 bg-white/90 backdrop-blur-sm p-5 shadow-md transition hover:shadow-lg hover:border-sky-200"
                   >
                     <div className="flex items-start justify-between">
@@ -359,9 +359,12 @@ function UserDashboard() {
                         <span className="font-medium text-sky-600">{consultant.available}</span>
                       </div>
                     </div>
-                    <button className="mt-4 w-full rounded-lg bg-gradient-to-r from-sky-500 to-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-sky-500/30 transition hover:shadow-lg hover:shadow-sky-500/40">
+                    <Link 
+                      to="/consultant/priya-nair"
+                      className="block mt-4 w-full rounded-lg bg-gradient-to-r from-sky-500 to-indigo-600 px-4 py-2 text-sm font-semibold text-white text-center shadow-md shadow-sky-500/30 transition hover:shadow-lg hover:shadow-sky-500/40"
+                    >
                       View Profile
-                    </button>
+                    </Link>
                   </div>
                 ))}
               </div>
